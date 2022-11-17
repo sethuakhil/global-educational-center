@@ -14,7 +14,7 @@ public class CourseController {
 	@Autowired
 	CourseService courseService;
 	
-	@GetMapping("/get")
+	@GetMapping("/index")
 	public ModelAndView getCourses(Model model){
 		ModelAndView mv=new ModelAndView("index");
 		mv.addObject("course", courseService.getCourse());

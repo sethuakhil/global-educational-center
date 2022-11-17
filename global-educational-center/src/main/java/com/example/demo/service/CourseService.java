@@ -16,5 +16,8 @@ public class CourseService {
 		return courseRepo.findAll();
 	}
 	
+	public void addCourse(Course newCourse) {
+		courseRepo.save(newCourse);
+	}
 
 }
