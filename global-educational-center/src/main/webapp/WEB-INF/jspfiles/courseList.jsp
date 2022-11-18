@@ -15,12 +15,14 @@ table, th, td {
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<h1>GLOBAL EDUCATIONAL CENTER</h1>
-	<form action="/new">
-		<input type="submit" value="CREATE NEW COURSE" />
-	</form>
+	<a href="/new">Add New Course</a><br>
+	
 	<br>
 
 	<table style="width: 100%">
@@ -33,13 +35,21 @@ table, th, td {
 				<th>ACTION</th>
 			</tr>
 		</thead>
-		<c:forEach var="course" items="${courses}">
+		<tbody>
+		<c:forEach var="course" items="${course}">
+		<tr>
 			<td>${course.courseId}</td>
 			<td>${course.courseName}</td>
 			<td>${course.fees}</td>
 			<td>${course.duration}</td>
+			<td>
+			
+			<a href="editCourse?id=${course.courseId}"
+                            class="btn btn-sm btn-dark">Edit</a>
+			<a href="/delete" class="btn btn-danger">delete</a>
+			</tr>
 		</c:forEach>
-
+	</tbody>
 	</table>
 
 

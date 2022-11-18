@@ -15,7 +15,7 @@ public class GlobalEducationalCenterApplication {
 		ConfigurableApplicationContext context = SpringApplication.run(GlobalEducationalCenterApplication.class, args);
 		CourseService courseRepo = context.getBean(CourseService.class);
 		
-		System.out.println(courseRepo.getCourse());
+		System.out.println(courseRepo.corseList());
 		
 		
 //		Course course = new Course();

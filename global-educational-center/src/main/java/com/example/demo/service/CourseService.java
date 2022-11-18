@@ -12,12 +12,21 @@ public class CourseService {
 	@Autowired
 	CourseRepo courseRepo;
 	
-	public List<Course> getCourse() {
+	public List<Course> corseList() {
 		return courseRepo.findAll();
 	}
 	
 	public void addCourse(Course newCourse) {
 		courseRepo.save(newCourse);
+	}
+	
+	public void saveCourse(Course newCourse) {
+		courseRepo.save(newCourse);
+	}
+	public Course getCourse(long courseId) {
+		
+		return courseRepo.findById(courseId).get();
+		
 	}
 
 }
