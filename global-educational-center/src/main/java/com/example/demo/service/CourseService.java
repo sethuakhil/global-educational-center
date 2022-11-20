@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,9 +25,14 @@ public class CourseService {
 		courseRepo.save(newCourse);
 	}
 	public Course getCourse(long courseId) {
-		
 		return courseRepo.findById(courseId).get();
 		
 	}
+	public void deleteCourse(long id) {
+		this.courseRepo.deleteById(id);
+	}
+
+	
+	
 
 }

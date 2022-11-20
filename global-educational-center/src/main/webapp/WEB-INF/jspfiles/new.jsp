@@ -9,19 +9,19 @@
 <body>
 <h1>Add New Course</h1><br>
 
-<form action="/save">  
+<form action="/save" method=post>  
         Enter Course Number:  
-        <input type="text" name="Number" size="20">  
+        <input type="text" name="courseId" size="20">  
         <br> <br>  
         Enter Course Name:  
-        <input type="text" name="Name" size="20">
+        <input type="text" name="courseName" size="20">
         <br> <br>
         Enter Fees:  
-        <input type="number" name="Fees" size="20">
+        <input type="number" name="fees" size="20">
         <br> <br>  
         Enter Duration:  
-        <input type="text" name="Duration" size="20">
-        <input type="submit" />
+        <input type="text" name="duration" size="20">
+        <input type="submit" value="submit">
     </form>  
 
 </body>

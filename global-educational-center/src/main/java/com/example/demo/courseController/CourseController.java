@@ -26,32 +26,36 @@ public class CourseController {
 		return mv;
 
 	}
+	
 	@GetMapping("/new")
-	public ModelAndView addCourses(Model model){
-		ModelAndView mv=new ModelAndView("new");
-//		mv.addObject("course", courseService.getCourse());
-		return mv;
-	}
+    public ModelAndView itemInsertion(Model model) {
+        ModelAndView mv = new ModelAndView("new");
+        mv.addObject("course", new Course());
+        return mv;
+    }
+	
+	
 	@GetMapping("/editCourse")
-	public ModelAndView editCourses(@RequestParam("id") long id){
+	public ModelAndView editCourses(@RequestParam("courseId") long courseId){
 		ModelAndView mv=new ModelAndView("editCourse");
-		mv.addObject("course", courseService.getCourse(id));
+		mv.addObject("course", courseService.getCourse(courseId));
 		return mv;
 	} 
 	
-	@PostMapping("/update")
-	public ModelAndView updateCourses(@ModelAttribute("course") Course course ){
-		courseService.saveCourse(course);
-		ModelAndView mv=new ModelAndView("redirect:/index");
-		mv.addObject("course", courseService.corseList());
-		return mv; 
+
+	
+	@GetMapping("/delete")
+	public ModelAndView deleteCourse(@RequestParam("courseId") long courseId) {
+		ModelAndView mv = new ModelAndView("redirect:/index");
+		courseService.deleteCourse(courseId);
+		return mv;
 	}
 	
 
 	@PostMapping("/save")
 	public ModelAndView saveCourses(@ModelAttribute("course") Course course ){
 		ModelAndView mv=new ModelAndView("redirect:/index");
-		mv.addObject("course", courseService.corseList());
+		courseService.saveCourse(course);
 		return mv; 
 	}
 }

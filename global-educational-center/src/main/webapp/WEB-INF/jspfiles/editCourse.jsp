@@ -10,19 +10,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="update" method="post">  
+<form action="/save" method="post">  
         Enter Course Number:  
-        <input type="text" name="Number" size="20" value=${course.courseId }>  
+        <input type="text" name="courseId" size="20" value=${course.courseId } readonly="readonly">  
         <br> <br>  
         Enter Course Name:  
-        <input type="text" name="Name" size="20" value=${course.courseName }>
+        <input type="text" name="courseName" size="20" value=${course.courseName } readonly="readonly">
         <br> <br>
         Enter Fees:  
-        <input type="number" name="Fees" size="20" value=${course.fees }>
+        <input type="number" name="fees" size="20" value=${course.fees }>
         <br> <br>  
         Enter Duration:  
-        <input type="text" name="Duration" size="20" value=${course.duration }>
-        <input type="submit" />
+        <input type="text" name="duration" size="20" value=${course.duration }>
+        <input type="submit" name="update">
     </form>  
 
 

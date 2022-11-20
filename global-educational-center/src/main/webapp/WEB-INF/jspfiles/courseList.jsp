@@ -44,9 +44,9 @@ table, th, td {
 			<td>${course.duration}</td>
 			<td>
 			
-			<a href="editCourse?id=${course.courseId}"
+			<a href="editCourse?courseId=${course.courseId}"
                             class="btn btn-sm btn-dark">Edit</a>
-			<a href="/delete" class="btn btn-danger">delete</a>
+			<a href="delete?courseId=${course.courseId }" class="btn btn-danger">delete</a>
 			</tr>
 		</c:forEach>
 	</tbody>
